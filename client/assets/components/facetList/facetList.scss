@@ -1,0 +1,8 @@
+.facet-list div.accordion-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.block-list li.disabled>label:hover{
+  cursor: not-allowed;
+}
