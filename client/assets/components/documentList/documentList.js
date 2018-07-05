@@ -31,6 +31,7 @@
     vm.toggleGroupedResults = toggleGroupedResults;
     vm.showGroupedResults = {};
     vm.getDocPosition = getDocPosition;
+    vm.filterJiraNonIssue = filterJiraNonIssue;
 
     activate();
 
@@ -85,6 +86,7 @@
         vm.groupedResults = data.grouped;
         parseGrouping(vm.groupedResults);
       }
+
       return docs;
     }
 
@@ -146,6 +148,17 @@
      */
     function getDocPosition(doc, docs){
       return _.findIndex(docs, doc);
+    }
+
+    function filterJiraNonIssue(doc) {
+      if(getDocType(doc) !== 'lucid.jira/jira') {
+        return true;
+      }
+
+      if(doc.jira_content_type_s) {
+        return doc.jira_content_type_s.toLowerCase() === 'ISSUE'.toLowerCase();
+      }
+      return false;
     }
   }
 })();

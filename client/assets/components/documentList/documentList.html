@@ -2,12 +2,12 @@
   <div ng-repeat="doc in vm.docs" ng-switch="::vm.getDocType(doc)">
     <!-- <document-example ng-switch-when="string_matching_data_connector" doc="doc" highlight="vm.highlighting"></document-example> -->
     <document-file ng-switch-when="lucid.anda/file" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-file>
-    <document-jira ng-switch-when="lucid.anda/jira" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-jira>
+    <!--<document-jira ng-switch-when="lucid.anda/jira" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-jira>-->
     <document-slack ng-switch-when="lucid.slack/slack" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-slack>
     <document-twitter ng-switch-when="lucid.twitter.search/twitter_search" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-twitter>
     <document-twitter ng-switch-when="lucid.twitter.stream/twitter_stream" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-twitter>
     <document-web ng-switch-when="lucid.anda/web" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-web>
-    <document-cybr-jira ng-switch-when="lucid.jira/jira" doc="doc"  position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-cybr-jira>
+    <document-cybr-jira ng-switch-when="lucid.jira/jira"  ng-if="vm.filterJiraNonIssue(doc)" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-cybr-jira>
     <document-default ng-switch-default doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-default>
   </div>
 <!-- Regular grouped results -->
@@ -20,12 +20,12 @@
 
         <!-- <document-example ng-switch-when="string_matching_data_connector" doc="doc" highlight="vm.highlighting"></document-example> -->
         <document-file ng-switch-when="lucid.anda/file" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-file>
-        <document-jira ng-switch-when="lucid.anda/jira" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-jira>
+        <!--<document-jira ng-switch-when="lucid.anda/jira" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-jira>-->
         <document-slack ng-switch-when="lucid.slack/slack" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-slack>
         <document-twitter ng-switch-when="lucid.twitter.search/twitter_search" position="vm.getDocPosition(doc,vm.docs)" doc="doc" highlight="vm.highlighting"></document-twitter>
         <document-twitter ng-switch-when="lucid.twitter.stream/twitter_stream" position="vm.getDocPosition(doc,vm.docs)" doc="doc" highlight="vm.highlighting"></document-twitter>
         <document-web ng-switch-when="lucid.anda/web" doc="doc"  position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-web>
-        <document-cybr-jira ng-switch-when="lucid.jira/jira" doc="doc"  position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-cybr-jira>
+        <document-cybr-jira ng-switch-when="lucid.jira/jira" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-cybr-jira>
         <document-default  ng-switch-default doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting" ></document-default>
       </div>
     </div>
@@ -33,7 +33,7 @@
     <div ng-repeat="doc in vm.groupedDocs" ng-switch="::vm.getDocType(doc)" ng-show="vm.showGroupedResults['simpleGrouped']";>
       <!-- <document-example ng-switch-when="string_matching_data_connector" doc="doc" highlight="vm.highlighting"></document-example> -->
       <document-file ng-switch-when="lucid.anda/file" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-file>
-      <document-jira ng-switch-when="lucid.anda/jira" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-jira>
+      <!--<document-jira ng-switch-when="lucid.anda/jira" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-jira>-->
       <document-slack ng-switch-when="lucid.slack/slack" doc="doc" position="vm.getDocPosition(doc,vm.docs)" highlight="vm.highlighting"></document-slack>
       <document-twitter ng-switch-when="lucid.twitter.search/twitter_search" position="vm.getDocPosition(doc,vm.docs)" doc="doc" highlight="vm.highlighting"></document-twitter>
       <document-twitter ng-switch-when="lucid.twitter.stream/twitter_stream" position="vm.getDocPosition(doc,vm.docs)" doc="doc" highlight="vm.highlighting"></document-twitter>

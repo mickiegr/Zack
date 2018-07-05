@@ -1,12 +1,5 @@
-<article class="grid-block document row">
-  <div class="detail vertical grid-content">
-    <h3 class="subheader">
-      <field value="vm.doc._templateDisplayFields.id" maxlength="200"></field>
-    </h3>
-    <!-- Add your fields here. -->
-    <!-- Field with highlight. -->
-    <p class="large-8 xlarge-7 xx-large-6">
-      <field value="::vm.doc._templateDisplayFields.body" highlight="::vm.highlight[doc._templateDisplayFields.id]" hkey="{{::vm.getTemplateDisplayFieldName('body')}}"></field>
-    </p>
-  </div>
+<article class="grid-block document document-jira row" ng-switch="vm.doc.jira_content_type_s">
+  <cybr-jira-project ng-switch-when="PROJECT" doc="vm.doc" highlight="vm.highlight"></cybr-jira-project>
+  <cybr-jira-issue ng-switch-default doc="vm.doc" highlight="vm.highlight"></cybr-jira-issue>
 </article>
+
