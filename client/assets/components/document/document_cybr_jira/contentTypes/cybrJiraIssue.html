@@ -1,7 +1,7 @@
 <div class="detail jira-issue vertical grid-content">
 
   <h3 class="subheader">
-    <a ng-click="vm.goToJira(vm.doc._templateDisplayFields.key)" target="_blank">
+    <a ng-click="vm.goToJira(vm.doc._templateDisplayFields.key)">
       <field value="::vm.doc._templateDisplayFields.summary" highlight="::vm.highlight[doc._templateDisplayFields.id]" maxlength="200" hkey="{{::vm.getTemplateDisplayFieldName('summary')}}"></field>
     </a>
   </h3>
@@ -17,7 +17,7 @@
              hkey="{{::vm.getTemplateDisplayFieldName('jira_content_type')}}"></field>
       </div>
       <div class="key" ng-if="::vm.doc._templateDisplayFields.parent">
-        <a ng-click="vm.goToJira(vm.doc._templateDisplayFields.key)" target="_blank">
+        <a ng-click="vm.goToJira(vm.doc._templateDisplayFields.key)">
           <field value="::vm.doc._templateDisplayFields.key" highlight="::vm.highlight[doc._templateDisplayFields.id]" maxlength="200" hkey="{{::vm.getTemplateDisplayFieldName('key')}}"></field>
         </a>
       </div>

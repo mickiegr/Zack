@@ -39,7 +39,7 @@
     }
 
     function goToJira(ticketNumber) {
-      window.location = "https://cybereason.atlassian.net/browse/" + ticketNumber;
+      window.open("https://cybereason.atlassian.net/browse/" + ticketNumber, '_black');
     }
   }
 })();
