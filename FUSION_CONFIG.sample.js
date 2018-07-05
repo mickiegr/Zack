@@ -98,13 +98,13 @@ appConfig = { //eslint-disable-line
    *   your_project_directory/client/assets/components/document/document_default/document_default.html
    */
   //In search results, for each doc, display this field as the head field
-  head_field: 'id',
-  subhead_field: 'subtitle',
-  description_field: 'description',
+  head_field: 'title_s',
+  subhead_field: 'parent_s',
+  description_field: 'body_t',
   //In search results, for each doc, use this field to generate link value when a user clicks on head_field
-  head_url_field: 'url',
+  head_url_field: 'id',
   //In search results, display a image in each doc page (leave empty for no image).
-  image_field: 'image',
+  image_field: 'og_image_s',
 
   // ADDING ADDITIONAL FIELDS TO DEFAULT DOCUMENTS
   //
@@ -134,7 +134,7 @@ appConfig = { //eslint-disable-line
   //
   // The HTML/Angular template is located in the following directory:
   //    your_project_directory/client/assets/components/document/document.html
-  fields_to_display:['title','id','name', '*'],
+  fields_to_display:['title','id','name'],
   field_display_labels: {
     'name': 'Document Name',
     //'id': 'Identification Number'
