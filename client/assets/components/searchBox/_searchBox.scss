@@ -7,7 +7,8 @@
 
 /// @Lucidworks-view.settings
 // Search-box
-$search-box-typeahead-border:              1px solid #ddd;
+$search-box-typeahead-border:              1px solid #0697CE;
+$search-box-typeahead-border-invisible:    1px solid #fff;
 $search-box-typeahead-background:          $body-background;
 $search-box-typeahead-text-color:          grayscale($primary-color);
 $search-box-typeahead-selected-background: $gray-light;
@@ -20,6 +21,10 @@ $search-box-empty-content:                 '';
     > span {position:relative;display: block;} 
     .query-input {
       margin-bottom: 0px;
+      border-bottom: $search-box-typeahead-border;
+      border-top: $search-box-typeahead-border-invisible;
+      border-right: $search-box-typeahead-border-invisible;
+      border-left: $search-box-typeahead-border-invisible;
       color: $search-box-typeahead-text-color;
     }
     .ac-container {z-index: 1000;backface-visibility: hidden;transform: translate3d(0, 0, 0);}

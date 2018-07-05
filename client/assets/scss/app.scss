@@ -11,6 +11,26 @@
   // transition-timing-function: cubic-bezier(.76, -.245, .24, 1.245);
 }
 
+.main-logo {
+  display : inline-block !important;
+  font-size: 60px;
+  vertical-align: bottom;
+}
+
+.main-logo .letter {
+  vertical-align: bottom;
+  float: left;
+  margin: -2px;
+  transform: scaleX(0.8);
+  bottom: 0;
+  height: 70px;
+  max-height: 100%;
+}
+
+.main-logo .image {
+  float: left;
+}
+
 .search-box-outer{
   flex: 1;
 }

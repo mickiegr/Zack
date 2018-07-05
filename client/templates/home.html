@@ -8,11 +8,11 @@ controller: HomeController as hc
 
   <!-- Top Bar -->
   <nav class="primary title-bar">
-    <span class="center">
+    <span class="center" style="position: relative; bottom: -23px">
       <form name="searchForm" class="show-for-medium" ng-submit="hc.search()">
-        <span class="inline-label search-label">
+        <span class="inline-label search-label" style="margin-left: 16px">
           <search-box query="hc.searchQuery" on-select="hc.search()" class="search-box-outer"></search-box>
-          <a href="#" class="success button" ng-click="hc.search()"><img
+          <a href="#" class="success button" ng-click="hc.search()" style="background-color: #0697CE; color: #fff"><img
             zf-iconic=""
             icon="magnifying-glass"
             data-direction="top"
@@ -21,7 +21,10 @@ controller: HomeController as hc
         </span>
       </form>
       <span class="show-for-small-only">
-        <a class="title"><img ng-if="::hc.logoLocation" ng-src="{{::hc.logoLocation}}" /><span ng-if="::(!hc.logoLocation)">{{::hc.appName}}</span></a>
+        <a class="title">
+          <img ng-if="::hc.logoLocation" ng-src="{{::hc.logoLocation}}" />
+          <span ng-if="::(!hc.logoLocation)">{{::hc.appName}}</span>
+        </a>
       </span>
     </span>
     <!-- Mobile Search bar -->
@@ -34,15 +37,35 @@ controller: HomeController as hc
           size="small"
           class="iconic-color-secondary"></a></a>
       </li>
-      <li class="show-for-medium">
-        <a class="title"><img ng-if="::hc.logoLocation" ng-src="{{::hc.logoLocation}}" /><span ng-if="::(!hc.logoLocation)">{{::hc.appName}}</span></a>
+      <li class="show-for-medium" style="margin-left: 27%">
+        <div class="main-logo" ng-if="::hc.logoLocation" style="width:100px">
+          <a class="title">
+            <div>
+              <img ng-if="::hc.logoLocation" class="main-logo image" ng-src="{{::hc.logoLocation}}" />
+            </div>
+            <div class="main-logo" style="margin-left: -22px">
+              <h5 class="main-logo letter" style="width: 153px">
+                <div style="position: absolute; bottom: 0">
+                  <span style="color:#0697CE" class="main-logo letter">Z</span>
+                  <span style="color:#21C2B3" class="main-logo letter">A</span>
+                  <span style="color:#FDB41A" class="main-logo letter">C</span>
+                  <span style="color:#B31F2D" class="main-logo letter">K</span>
+                  <span style="color:#00B135" class="main-logo letter">!</span>
+                </div>
+              </h5>
+            </div>
+          </a>
+        </div>
       </li>
     </ul>
-    <ul class="right menu-bar primary condense">
+    <!--<ul class="right menu-bar primary condense">
       <li class="show-for-medium">
         <a ui-sref="login" ng-click="hc.logout()">Logout</a>
       </li>
-    </ul>
+    </ul>-->
+    <div>
+      <img ng-if="::hc.logoTreeLocation" src="{{::hc.logoTreeLocation}}">
+    </div>
   </nav>
   <nav class="primary title-bar show-for-small-only">
     <form ng-submit="hc.search()">
@@ -84,5 +107,6 @@ controller: HomeController as hc
 
   <!-- Main Content Frame -->
   <div class="grid-block vertical" ng-include="'templates/home_main-content-frame.html'"></div>
+
 
 </div>
